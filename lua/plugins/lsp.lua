@@ -18,7 +18,9 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local config = require("lspconfig")
-			config.lua_ls.setup({})
+			config.lua_ls.setup({
+                settings = { Lua = { diagnostics = { globals = {'vim'} } } },
+            })
 			config.gopls.setup({})
 			config.eslint.setup({})
 			config.html.setup({})
