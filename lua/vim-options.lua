@@ -1,21 +1,30 @@
 vim.g.mapleader = " "
-vim.api.nvim_command "set relativenumber"
-vim.api.nvim_command "set nowrap"
-vim.fn.sign_define('DapBreakpoint', { text = '🐞' })
+vim.api.nvim_command("set relativenumber")
+vim.api.nvim_command("set nowrap")
+vim.opt.termguicolors = true
+vim.opt.signcolumn = "yes"
+vim.opt.clipboard = "unnamed,unnamedplus"
+vim.opt.cursorline = true
+vim.opt.foldcolumn = "0"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
 
-vim.filetype.add {
-    extension = {
-        templ = "templ",
-    },
-}
+vim.fn.sign_define("DapBreakpoint", { text = "🐞" })
+
+vim.filetype.add({
+	extension = {
+		templ = "templ",
+	},
+})
 
 vim.api.nvim_create_augroup("ash_custom", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
-    group = "ash_custom",
-    pattern = "*",
-    callback = function()
-        vim.highlight.on_yank { timeout = 200 }
-    end,
+	group = "ash_custom",
+	pattern = "*",
+	callback = function()
+		vim.highlight.on_yank({ timeout = 200 })
+	end,
 })
 
 vim.cmd("set expandtab")
