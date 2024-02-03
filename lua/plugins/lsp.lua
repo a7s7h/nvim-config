@@ -48,9 +48,9 @@ return {
                 capabilties = capabilities,
             })
 
-            vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-            vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-            vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+            vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP: hower" })
+            vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP: go to definition" })
+            vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP: code action" })
         end,
     },
 }

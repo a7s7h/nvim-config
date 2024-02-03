@@ -8,5 +8,6 @@ return {
     },
     config = function()
         require("chatgpt").setup()
+        vim.keymap.set("n", "<leader>cg", ":ChatGPT<CR>", { desc = "ChatGPT" })
     end,
 }
