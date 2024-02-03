@@ -10,6 +10,7 @@ return {
                 "lua_ls",
                 "cmake",
                 "templ",
+                "eslint",
                 "gopls",
                 "tsserver",
                 "tailwindcss",
@@ -20,7 +21,7 @@ return {
     {
         "neovim/nvim-lspconfig",
         config = function()
-            local capabilities = require("cmp_nvim_lsp").default_capabilities
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
             local config = require("lspconfig")
             config.lua_ls.setup({
                 capabilties = capabilities,
