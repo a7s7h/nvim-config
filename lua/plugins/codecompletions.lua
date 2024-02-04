@@ -8,15 +8,19 @@ return {
     },
     {
         "hrsh7th/nvim-cmp",
+        event = { "BufReadPost", "BufNewFile" },
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-nvim-lua",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-cmdline",
             "hrsh7th/cmp-path",
+            "windwp/nvim-ts-autotag",
+            "onsails/lspkind.nvim",
         },
         config = function()
             local cmp = require("cmp")
+            local lspkind = require("lspkind")
             require("luasnip.loaders.from_vscode").lazy_load()
             cmp.setup({
                 snippet = {
@@ -24,7 +28,10 @@ return {
                         require("luasnip").lsp_expand(args.body)
                     end,
                 },
-                window = {},
+                window = {
+                    completion = cmp.config.window.bordered(),
+                    documentation = cmp.config.window.bordered(),
+                },
                 mapping = cmp.mapping.preset.insert({
                     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
                     ["<C-f>"] = cmp.mapping.scroll_docs(4),
@@ -34,10 +41,24 @@ return {
                 }),
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
-                    { name = "luasnip" },
-                }, {
-                    { name = "buffer" },
+                    { name = "buffer", max_item_count = 5 },
+                    { name = "path", max_item_count = 3 },
+                    { name = "luasnip", max_item_count = 3 },
                 }),
+				formatting = {
+					expandable_indicator = true,
+					format = lspkind.cmp_format({
+						mode = "symbol_text",
+						maxwidth = 50,
+						ellipsis_char = "...",
+						symbol_map = {
+							Copilot = "",
+						},
+					}),
+				},
+				experimental = {
+					ghost_text = true,
+				},
             })
 
             -- Set configuration for specific filetype.

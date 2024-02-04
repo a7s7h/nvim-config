@@ -7,14 +7,15 @@ return {
         "williamboman/mason-lspconfig.nvim",
         opts = {
             ensure_installed = {
+                "templ",
                 "lua_ls",
                 "cmake",
-                "templ",
                 "eslint",
                 "gopls",
                 "tsserver",
                 "tailwindcss",
                 "html",
+                "htmx",
             },
         },
     },
@@ -37,6 +38,10 @@ return {
                 capabilties = capabilities,
                 filetypes = { "html", "templ" },
             })
+            config.htmx.setup({
+                capabilties = capabilities,
+                filetypes = { "html", "templ" },
+            })
             config.tailwindcss.setup({
                 capabilties = capabilities,
                 filetypes = { "templ", "javascript", "typescript", "react" },
@@ -45,7 +50,30 @@ return {
             config.cmake.setup({
                 capabilties = capabilities,
             })
+
+            local templ_format = function()
+                if vim.bo.filetype == "templ" then
+                    local bufnr = vim.api.nvim_get_current_buf()
+                    local filename = vim.api.nvim_buf_get_name(bufnr)
+                    local cmd = "templ fmt " .. vim.fn.shellescape(filename)
+
+                    vim.fn.jobstart(cmd, {
+                        on_exit = function()
+                            if vim.api.nvim_get_current_buf() == bufnr then
+                                vim.cmd('e!')
+                            end
+                        end,
+                    })
+                else
+                    vim.lsp.buf.format()
+                end
+            end
+
             config.templ.setup({
+                on_attach = function(_, bufnr)
+                    local opts = { buffer = bufnr, remap = false, desc = "LSP: code formatting" }
+                    vim.keymap.set("n", "<leader>cf", templ_format, opts)
+                end,
                 capabilties = capabilities,
             })
 
