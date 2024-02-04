@@ -1,7 +1,5 @@
-vim.filetype.add({ extension = { templ = "templ" } })
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-
+-- bootstrap lazy.nvim
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
         "git",
@@ -12,9 +10,8 @@ if not vim.loop.fs_stat(lazypath) then
         lazypath,
     })
 end
-
 vim.opt.rtp:prepend(lazypath)
-
+-- default settings
 require("vim-options")
+-- load plugins
 require("lazy").setup("plugins")
-require("luasnip.loaders.from_vscode").lazy_load()

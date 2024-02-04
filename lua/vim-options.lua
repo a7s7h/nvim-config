@@ -1,3 +1,4 @@
+-- some global options
 vim.g.mapleader = " "
 vim.api.nvim_command("set relativenumber")
 vim.api.nvim_command("set nowrap")
@@ -10,33 +11,33 @@ vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
 vim.opt.shortmess:append("sI")
-
+-- disable built-in providers
 for _, provider in ipairs({ "node", "perl", "python3", "ruby" }) do
-    vim.g["loaded_" .. provider .. "_provider"] = 0
+	vim.g["loaded_" .. provider .. "_provider"] = 0
 end
-
+-- redefine symbols
 vim.fn.sign_define("DapBreakpoint", { text = "🐞" })
-
+-- register templ filetype
 vim.filetype.add({
-    extension = {
-        templ = "templ",
-    },
+	extension = {
+		templ = "templ",
+	},
 })
-
+-- animate yank highlight
 vim.api.nvim_create_augroup("ash_custom", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
-    group = "ash_custom",
-    pattern = "*",
-    callback = function()
-        vim.highlight.on_yank({ timeout = 200 })
-    end,
+	group = "ash_custom",
+	pattern = "*",
+	callback = function()
+		vim.highlight.on_yank({ timeout = 200 })
+	end,
 })
-
+-- set tabulation to 4 spaces
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
-
+-- various keymaps
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down centered" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up centered" })
 vim.keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
