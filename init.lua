@@ -1,3 +1,5 @@
+-- default settings
+require("vim-options")
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 -- bootstrap lazy.nvim
 if not vim.loop.fs_stat(lazypath) then
@@ -11,7 +13,5 @@ if not vim.loop.fs_stat(lazypath) then
     })
 end
 vim.opt.rtp:prepend(lazypath)
--- default settings
-require("vim-options")
 -- load plugins
 require("lazy").setup("plugins")
