@@ -41,24 +41,24 @@ return {
                 }),
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
-                    { name = "buffer", max_item_count = 5 },
-                    { name = "path", max_item_count = 3 },
+                    { name = "buffer",  max_item_count = 5 },
+                    { name = "path",    max_item_count = 3 },
                     { name = "luasnip", max_item_count = 3 },
                 }),
-				formatting = {
-					expandable_indicator = true,
-					format = lspkind.cmp_format({
-						mode = "symbol_text",
-						maxwidth = 50,
-						ellipsis_char = "...",
-						symbol_map = {
-							Copilot = "",
-						},
-					}),
-				},
-				experimental = {
-					ghost_text = true,
-				},
+                formatting = {
+                    expandable_indicator = true,
+                    format = lspkind.cmp_format({
+                        mode = "symbol_text",
+                        maxwidth = 50,
+                        ellipsis_char = "...",
+                        symbol_map = {
+                            Copilot = "",
+                        },
+                    }),
+                },
+                experimental = {
+                    ghost_text = true,
+                },
             })
 
             -- Set configuration for specific filetype.

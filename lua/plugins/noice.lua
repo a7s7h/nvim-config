@@ -7,10 +7,10 @@ return {
         "rcarriga/nvim-notify",
     },
     config = function()
-        require("notify").setup {
+        require("notify").setup({
             background_colour = "#000000",
-        }
-        require("noice").setup {
+        })
+        require("noice").setup({
             lsp = {
                 override = {
                     ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
@@ -18,6 +18,6 @@ return {
                     ["cmp.entry.get_documentation"] = true,
                 },
             },
-        }
+        })
     end,
 }

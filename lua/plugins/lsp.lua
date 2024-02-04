@@ -78,7 +78,11 @@ return {
             })
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP: hower" })
-            vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP: go to definition" })
+            vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "LSP: declaration" })
+            vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP: definition" })
+            vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "LSP: implementation" })
+            vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "LSP: references" })
+            vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, { desc = "LSP: type definition" })
             vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP: code action" })
         end,
     },
