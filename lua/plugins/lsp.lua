@@ -71,6 +71,7 @@ return {
 
             config.templ.setup({
                 on_attach = function(_, bufnr)
+                    vim.cmd("TSEnable highlight")
                     local opts = { buffer = bufnr, remap = false, desc = "LSP: code formatting" }
                     vim.keymap.set("n", "<leader>cf", templ_format, opts)
                 end,
