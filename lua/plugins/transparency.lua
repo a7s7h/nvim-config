@@ -1,6 +1,7 @@
 return {
     "tribela/vim-transparent",
     config = function()
+        vim.cmd("TransparentDisable")
         vim.keymap.set(
             "n",
             "<leader>tb",

@@ -5,7 +5,7 @@ return {
             options = {
                 theme = "papercolor_light",
             },
-            extensions = { "fugitive" },
+            extensions = { "fugitive", "trouble" },
         }
     end,
 }
