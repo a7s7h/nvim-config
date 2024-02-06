@@ -12,9 +12,9 @@ return {
         })
         require("noice").setup({
             cmdline = {
-               format = {
-                    search_down = { icon = "󰍉 ", color = "red" },
-                    search_up = { icon = "󰍉 ", color = "red" },
+                format = {
+                    search_down = { icon = "󰍉 " },
+                    search_up = { icon = "󰍉 " },
                 },
             },
             lsp = {

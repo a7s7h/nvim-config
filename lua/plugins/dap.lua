@@ -6,7 +6,6 @@ return {
     },
     config = function()
         local dap, dapgo, dapui = require("dap"), require("dap-go"), require("dapui")
-
         dapgo.setup({})
         dapui.setup({})
 

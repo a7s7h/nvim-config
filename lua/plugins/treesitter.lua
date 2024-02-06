@@ -25,6 +25,8 @@ return {
 					"ocaml_interface",
 					"prisma",
 					"tsx",
+                    "templ",
+                    "go",
 					"typescript",
 					"vim",
 				},

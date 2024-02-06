@@ -1,24 +1,29 @@
--- some global options
 vim.g.mapleader = " "
 vim.api.nvim_command("set relativenumber")
 vim.api.nvim_command("set nowrap")
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
-vim.opt.clipboard = "unnamed,unnamedplus"
+vim.opt.clipboard = "unnamedplus"
 vim.opt.cursorline = true
+-- folding
 vim.opt.foldcolumn = "0"
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
+-- disable intro
 vim.opt.shortmess:append("sI")
+-- open splitter right and below
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+-- tab options
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
+-- use mouse
 vim.opt.mouse = "a"
 vim.opt.virtualedit = "block"
 vim.opt.inccommand = "nosplit"
+-- search options
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.updatetime = 50

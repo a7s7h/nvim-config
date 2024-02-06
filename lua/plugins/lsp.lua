@@ -60,7 +60,7 @@ return {
                     vim.fn.jobstart(cmd, {
                         on_exit = function()
                             if vim.api.nvim_get_current_buf() == bufnr then
-                                vim.cmd('e!')
+                                vim.cmd("e!")
                             end
                         end,
                     })

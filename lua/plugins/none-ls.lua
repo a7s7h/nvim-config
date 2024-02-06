@@ -10,6 +10,7 @@ return {
                         "javascript",
                         "json",
                         "xsl",
+                        "xml",
                         "html",
                         "typescript",
                         "markdown",
