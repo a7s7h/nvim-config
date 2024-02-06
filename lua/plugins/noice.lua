@@ -11,6 +11,12 @@ return {
             background_colour = "#000000",
         })
         require("noice").setup({
+            cmdline = {
+               format = {
+                    search_down = { icon = "󰍉 ", color = "red" },
+                    search_up = { icon = "󰍉 ", color = "red" },
+                },
+            },
             lsp = {
                 override = {
                     ["vim.lsp.util.convert_input_to_markdown_lines"] = true,

@@ -25,30 +25,30 @@ return {
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
             local config = require("lspconfig")
             config.lua_ls.setup({
-                capabilties = capabilities,
+                capabilities = capabilities,
                 settings = { Lua = { diagnostics = { globals = { "vim" } } } },
             })
             config.gopls.setup({
-                capabilties = capabilities,
+                capabilities = capabilities,
             })
             config.tsserver.setup({
-                capabilties = capabilities,
+                capabilities = capabilities,
             })
             config.html.setup({
-                capabilties = capabilities,
+                capabilities = capabilities,
                 filetypes = { "html", "templ" },
             })
             config.htmx.setup({
-                capabilties = capabilities,
+                capabilities = capabilities,
                 filetypes = { "html", "templ" },
             })
             config.tailwindcss.setup({
-                capabilties = capabilities,
+                capabilities = capabilities,
                 filetypes = { "templ", "javascript", "typescript", "react" },
                 init_options = { userLanguages = { templ = "html" } },
             })
             config.cmake.setup({
-                capabilties = capabilities,
+                capabilities = capabilities,
             })
 
             local templ_format = function()
@@ -71,11 +71,10 @@ return {
 
             config.templ.setup({
                 on_attach = function(_, bufnr)
-                    vim.cmd("TSEnable highlight")
                     local opts = { buffer = bufnr, remap = false, desc = "LSP: code formatting" }
                     vim.keymap.set("n", "<leader>cf", templ_format, opts)
                 end,
-                capabilties = capabilities,
+                capabilities = capabilities,
             })
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP: hower" })

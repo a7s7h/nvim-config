@@ -4,7 +4,7 @@ vim.api.nvim_command("set relativenumber")
 vim.api.nvim_command("set nowrap")
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
-vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamed,unnamedplus"
 vim.opt.cursorline = true
 vim.opt.foldcolumn = "0"
 vim.opt.foldlevel = 99
@@ -16,11 +16,14 @@ vim.opt.splitright = true
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
--- disable this if you donot like it
-vim.opt.scrolloff = 999
+vim.opt.mouse = "a"
 vim.opt.virtualedit = "block"
-vim.opt.inccommand = "nosplit" -- split is annoying
+vim.opt.inccommand = "nosplit"
 vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.updatetime = 50
+vim.opt.completeopt = { "menuone", "noselect" }
+vim.opt.undofile = true
 -- disable built-in providers
 for _, provider in ipairs({ "node", "perl", "python3", "ruby" }) do
 	vim.g["loaded_" .. provider .. "_provider"] = 0
