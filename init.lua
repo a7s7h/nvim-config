@@ -33,3 +33,14 @@ require("lazy").setup({
         },
     },
 })
+
+-- colorscheme tokyonight
+-- colorscheme tokyonight-night
+-- colorscheme tokyonight-storm
+-- colorscheme tokyonight-day
+-- colorscheme tokyonight-moon
+-- colorscheme catppuccin-latte
+-- colorscheme catppuccin-frappe
+-- colorscheme catppuccin-macchiato
+-- colorscheme catppuccin-mocha
+vim.cmd.colorscheme("tokyonight-moon")
