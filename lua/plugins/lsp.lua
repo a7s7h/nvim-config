@@ -1,89 +1,89 @@
 return {
-    {
-        "williamboman/mason.nvim",
-        opts = {},
-    },
-    {
-        "williamboman/mason-lspconfig.nvim",
-        opts = {
-            ensure_installed = {
-                "templ",
-                "lua_ls",
-                "cmake",
-                "eslint",
-                "gopls",
-                "tsserver",
-                "tailwindcss",
-                "html",
-                "htmx",
-            },
-        },
-    },
-    {
-        "neovim/nvim-lspconfig",
-        config = function()
-            local capabilities = require("cmp_nvim_lsp").default_capabilities()
-            local config = require("lspconfig")
-            config.lua_ls.setup({
-                capabilities = capabilities,
-                settings = { Lua = { diagnostics = { globals = { "vim" } } } },
-            })
-            config.gopls.setup({
-                capabilities = capabilities,
-            })
-            config.tsserver.setup({
-                capabilities = capabilities,
-            })
-            config.html.setup({
-                capabilities = capabilities,
-                filetypes = { "html", "templ" },
-            })
-            config.htmx.setup({
-                capabilities = capabilities,
-                filetypes = { "html", "templ" },
-            })
-            config.tailwindcss.setup({
-                capabilities = capabilities,
-                filetypes = { "templ", "javascript", "typescript", "react" },
-                init_options = { userLanguages = { templ = "html" } },
-            })
-            config.cmake.setup({
-                capabilities = capabilities,
-            })
+	{
+		"williamboman/mason.nvim",
+		opts = {},
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		opts = {
+			ensure_installed = {
+				"templ",
+				"lua_ls",
+				"cmake",
+				"eslint",
+				"gopls",
+				"tsserver",
+				"tailwindcss",
+				"html",
+				"htmx",
+			},
+		},
+	},
+	{
+		"neovim/nvim-lspconfig",
+		config = function()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local config = require("lspconfig")
+			config.lua_ls.setup({
+				capabilities = capabilities,
+				settings = { Lua = { diagnostics = { globals = { "vim" } } } },
+			})
+			config.gopls.setup({
+				capabilities = capabilities,
+			})
+			config.tsserver.setup({
+				capabilities = capabilities,
+			})
+			config.html.setup({
+				capabilities = capabilities,
+				filetypes = { "html", "templ" },
+			})
+			config.htmx.setup({
+				capabilities = capabilities,
+				filetypes = { "html", "templ" },
+			})
+			config.tailwindcss.setup({
+				capabilities = capabilities,
+				filetypes = { "templ", "javascript", "typescript", "react" },
+				init_options = { userLanguages = { templ = "html" } },
+			})
+			config.cmake.setup({
+				capabilities = capabilities,
+			})
 
-            local templ_format = function()
-                if vim.bo.filetype == "templ" then
-                    local bufnr = vim.api.nvim_get_current_buf()
-                    local filename = vim.api.nvim_buf_get_name(bufnr)
-                    local cmd = "templ fmt " .. vim.fn.shellescape(filename)
+			local templ_format = function()
+				if vim.bo.filetype == "templ" then
+					local bufnr = vim.api.nvim_get_current_buf()
+					local filename = vim.api.nvim_buf_get_name(bufnr)
+					local cmd = "templ fmt " .. vim.fn.shellescape(filename)
 
-                    vim.fn.jobstart(cmd, {
-                        on_exit = function()
-                            if vim.api.nvim_get_current_buf() == bufnr then
-                                vim.cmd("e!")
-                            end
-                        end,
-                    })
-                else
-                    vim.lsp.buf.format()
-                end
-            end
+					vim.fn.jobstart(cmd, {
+						on_exit = function()
+							if vim.api.nvim_get_current_buf() == bufnr then
+								vim.cmd("e!")
+							end
+						end,
+					})
+				else
+					vim.lsp.buf.format()
+				end
+			end
 
-            config.templ.setup({
-                on_attach = function(_, bufnr)
-                    local opts = { buffer = bufnr, remap = false, desc = "LSP: code formatting" }
-                    vim.keymap.set("n", "<leader>cf", templ_format, opts)
-                end,
-                capabilities = capabilities,
-            })
+			config.templ.setup({
+				on_attach = function(_, bufnr)
+					local opts = { buffer = bufnr, remap = false, desc = "LSP: code formatting" }
+					vim.keymap.set("n", "<leader>cf", templ_format, opts)
+				end,
+				capabilities = capabilities,
+			})
 
-            vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP: hower" })
-            vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "LSP: declaration" })
-            vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP: definition" })
-            vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "LSP: implementation" })
-            vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "LSP: references" })
-            vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, { desc = "LSP: type definition" })
-            vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP: code action" })
-        end,
-    },
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP: hower" })
+			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "LSP: declaration" })
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP: definition" })
+			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "LSP: implementation" })
+			vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "LSP: references" })
+			vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, { desc = "LSP: type definition" })
+			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP: code action" })
+		end,
+	},
 }

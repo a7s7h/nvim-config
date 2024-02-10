@@ -1,6 +1,6 @@
 return {
-    "rebelot/kanagawa.nvim",
-    name = "kanagawa",
-    priority = 1001,
-    opts = {},
+	"rebelot/kanagawa.nvim",
+	name = "kanagawa",
+	priority = 1001,
+	opts = {},
 }
