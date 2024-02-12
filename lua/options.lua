@@ -50,11 +50,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank({ timeout = 200 })
 	end,
 })
+
 -- various keymaps
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down centered" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up centered" })
 vim.keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
-vim.keymap.set("n", "q", ":bd<cr>", { desc = "Close" })
+vim.keymap.set("n", "q", ":BufferLinePickClose<cr>", { desc = "Close" })
 vim.keymap.set("n", "<Esc>", ":noh<CR>", { desc = "Clear highlights" })
 vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file" })
 vim.keymap.set("n", "<C-c>", ":%y+<CR>", { desc = "Copy whole file" })
