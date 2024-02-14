@@ -21,7 +21,7 @@ return {
 				show_buffer_icons = true,
 				show_buffer_close_icons = true,
 				separator_style = "slant",
-				always_show_bufferline = true,
+				always_show_bufferline = false,
 			},
 		})
 	end,
