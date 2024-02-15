@@ -6,7 +6,7 @@ return {
 			"n",
 			"<leader>tb",
 			":TransparentToggle<CR>",
-			{ desc = "Toggle transparency", noremap = true, silent = true }
+			{ desc = "Transparency: toggle", noremap = true, silent = true }
 		)
 	end,
 }
