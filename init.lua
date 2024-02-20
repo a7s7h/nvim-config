@@ -48,4 +48,7 @@ require("lazy").setup({
 -- colorscheme catppuccin-frappe
 -- colorscheme catppuccin-macchiato
 -- colorscheme catppuccin-mocha
+-- colorscheme gruvbox
+
+vim.o.background = "dark"
 vim.cmd.colorscheme("tokyonight-moon")
