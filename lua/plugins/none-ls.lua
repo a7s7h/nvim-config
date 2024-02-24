@@ -18,11 +18,9 @@ return {
 					},
 					extra_args = { "--no-semi" },
 				}),
-				null_ls.builtins.diagnostics.eslint_d,
 				null_ls.builtins.diagnostics.staticcheck,
 				null_ls.builtins.formatting.goimports,
 				null_ls.builtins.formatting.goimports_reviser,
-				null_ls.builtins.formatting.xmllint,
 				null_ls.builtins.formatting.gofumpt,
 			},
 		})
