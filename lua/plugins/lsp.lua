@@ -14,6 +14,7 @@ return {
 				"gopls",
 				"tsserver",
 				"tailwindcss",
+                "rust_analyzer",
 				"html",
 				"htmx",
 			},
@@ -31,6 +32,9 @@ return {
 			config.gopls.setup({
 				capabilities = capabilities,
 			})
+            config.rust_analyzer.setup({
+                capabilities = capabilities,
+            })
 			config.tsserver.setup({
 				capabilities = capabilities,
 			})
