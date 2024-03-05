@@ -14,7 +14,7 @@ return {
 				"gopls",
 				"tsserver",
 				"tailwindcss",
-                "rust_analyzer",
+				"rust_analyzer",
 				"html",
 				"htmx",
 			},
@@ -32,9 +32,9 @@ return {
 			config.gopls.setup({
 				capabilities = capabilities,
 			})
-            config.rust_analyzer.setup({
-                capabilities = capabilities,
-            })
+			config.rust_analyzer.setup({
+				capabilities = capabilities,
+			})
 			config.tsserver.setup({
 				capabilities = capabilities,
 			})
@@ -87,7 +87,7 @@ return {
 			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "LSP: implementation" })
 			vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "LSP: references" })
 			vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, { desc = "LSP: type definition" })
-			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP: code action" })
+			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP: [c]ode [a]ction" })
 		end,
 	},
 }

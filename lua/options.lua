@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 vim.api.nvim_command("set relativenumber")
 vim.api.nvim_command("set nowrap")
 vim.opt.termguicolors = true
@@ -15,6 +16,8 @@ vim.opt.shortmess:append("sI")
 -- open splitter right and below
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+-- set highlight on search
+vim.opt.hlsearch = false
 -- tab options
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
@@ -26,7 +29,10 @@ vim.opt.inccommand = "nosplit"
 -- search options
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.updatetime = 50
+-- decrease update time
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
+
 vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.undofile = true
 -- disable built-in providers
