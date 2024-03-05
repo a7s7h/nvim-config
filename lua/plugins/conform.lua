@@ -2,8 +2,8 @@ return {
 	{
 		"stevearc/conform.nvim",
 		config = function()
-			vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "LSP: [c]ode [f]ormatting" })
-			require("conform").setup({
+			local conform = require("conform")
+			conform.setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
 					-- Conform will run multiple formatters sequentially
@@ -28,6 +28,7 @@ return {
 				timout_ms = 500,
 				lsp_fallback = true,
 			})
+			vim.keymap.set("n", "<leader>cf", conform.format, { desc = "LSP: [c]ode [f]ormatting" })
 		end,
 	},
 }

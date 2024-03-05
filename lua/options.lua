@@ -20,8 +20,8 @@ vim.opt.splitright = true
 vim.opt.hlsearch = false
 -- tab options
 vim.opt.expandtab = true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 -- use mouse
 vim.opt.mouse = "a"
 vim.opt.virtualedit = "block"
@@ -32,6 +32,16 @@ vim.opt.smartcase = true
 -- decrease update time
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
+
+vim.opt.list = false
+vim.opt.listchars = {
+	tab = "▸ ",
+	extends = "❯",
+	precedes = "❮",
+	trail = "•",
+	eol = "↲",
+	space = "·",
+}
 
 vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.undofile = true
@@ -57,7 +67,18 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+vim.opt.scrolloff = 10
+
+local function toggle_list()
+	if vim.opt.list:get() then
+		vim.opt.list = false
+	else
+		vim.opt.list = true
+	end
+end
+
 -- various keymaps
+vim.keymap.set("n", "<leader>tl", toggle_list, { desc = "[t]oggle [l]ist chars" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down centered" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up centered" })
 vim.keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })

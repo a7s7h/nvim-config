@@ -33,7 +33,7 @@ return {
 		config = function()
 			local cmp = require("cmp")
 			local lspkind = require("lspkind")
-            -- local luasnip = require("luasnip")
+			-- local luasnip = require("luasnip")
 			require("luasnip.loaders.from_vscode").lazy_load()
 			cmp.setup({
 				snippet = {
@@ -45,13 +45,13 @@ return {
 					completion = cmp.config.window.bordered(),
 					documentation = cmp.config.window.bordered(),
 				},
-                completion = {
-                    completeopt = "menu,menuone,noinsert,noselect",
-                },
-                -- read ':help ins-completion' for more information
+				completion = {
+					completeopt = "menu,menuone,noinsert,noselect",
+				},
+				-- read ':help ins-completion' for more information
 				mapping = cmp.mapping.preset.insert({
-                    ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-                    ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+					["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+					["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
 					["<C-b>"] = cmp.mapping.scroll_docs(-4),
 					["<C-f>"] = cmp.mapping.scroll_docs(4),
 					["<C-Space>"] = cmp.mapping.complete(),
@@ -60,24 +60,24 @@ return {
 						-- behavior = cmp.ConfirmBehavior.Replace,
 						select = true,
 					}),
-                    -- ["<Tab>"] = cmp.mapping(function(fallback)
-                    --     if cmp.visible() then
-                    --         cmp.select_next_item()
-                    --     elseif luasnip.expand_or_jumpable() then
-                    --         luasnip.expand_or_jump()
-                    --     else
-                    --         fallback()
-                    --     end
-                    -- end, { "i", "s" }),
-                    -- ["<S-Tab>"] = cmp.mapping(function(fallback)
-                    --     if cmp.visible() then
-                    --         cmp.select_prev_item()
-                    --     elseif luasnip.jumpable(-1) then
-                    --         luasnip.jump(-1)
-                    --     else
-                    --         fallback()
-                    --     end
-                    -- end, { "i", "s" }),
+					-- ["<Tab>"] = cmp.mapping(function(fallback)
+					--     if cmp.visible() then
+					--         cmp.select_next_item()
+					--     elseif luasnip.expand_or_jumpable() then
+					--         luasnip.expand_or_jump()
+					--     else
+					--         fallback()
+					--     end
+					-- end, { "i", "s" }),
+					-- ["<S-Tab>"] = cmp.mapping(function(fallback)
+					--     if cmp.visible() then
+					--         cmp.select_prev_item()
+					--     elseif luasnip.jumpable(-1) then
+					--         luasnip.jump(-1)
+					--     else
+					--         fallback()
+					--     end
+					-- end, { "i", "s" }),
 				}),
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
@@ -86,6 +86,7 @@ return {
 					{ name = "luasnip", max_item_count = 3 },
 				}),
 				formatting = {
+					fields = { "menu", "abbr", "kind" },
 					expandable_indicator = true,
 					format = lspkind.cmp_format({
 						mode = "symbol_text",

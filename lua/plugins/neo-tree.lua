@@ -13,12 +13,12 @@ return {
 				side = "left",
 				auto_resize = true,
 			},
-            buffers = {
-                folow_current_file = {
-                    enabled = true,
-                    leave_dirs_open = true,
-                },
-            },
+			buffers = {
+				folow_current_file = {
+					enabled = true,
+					leave_dirs_open = true,
+				},
+			},
 			mappings = {
 				["<space>"] = {
 					"toggle_node",

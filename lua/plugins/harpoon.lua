@@ -7,7 +7,12 @@ return {
 	},
 	config = function()
 		local harpoon = require("harpoon")
-		harpoon.setup({})
+		harpoon.setup(harpoon, {
+			global_settings = {
+				save_on_toggle = false,
+				save_on_change = false,
+			},
+		})
 		vim.keymap.set("n", "<leader>ha", function()
 			harpoon:list():append()
 		end, { desc = "Harpoon: add file" })

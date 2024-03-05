@@ -6,11 +6,14 @@ return {
 		end,
 		event = { "BufEnter" },
 		dependencies = {
-            "nvim-treesitter/nvim-treesitter-context",
+			"nvim-treesitter/nvim-treesitter-context",
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
 		config = function()
 			require("nvim-treesitter.configs").setup({
+				modules = {},
+				ignore_install = {},
+				auto_install = false,
 				ensure_installed = {
 					"bash",
 					"c",
@@ -26,15 +29,15 @@ return {
 					"ocaml_interface",
 					"prisma",
 					"tsx",
-                    "templ",
-                    "go",
+					"templ",
+					"go",
 					"typescript",
 					"vim",
 				},
 				sync_install = false,
 				highlight = {
 					enable = true,
-                    disable = { "javascript", "typescript" },
+					disable = { "javascript", "typescript" },
 				},
 				indent = {
 					enable = true,

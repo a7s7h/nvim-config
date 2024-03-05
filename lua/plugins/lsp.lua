@@ -23,34 +23,45 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			require("neodev").setup()
+
+			local capabilities =
+				require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 			local config = require("lspconfig")
+
 			config.lua_ls.setup({
 				capabilities = capabilities,
 				settings = { Lua = { diagnostics = { globals = { "vim" } } } },
 			})
+
 			config.gopls.setup({
 				capabilities = capabilities,
 			})
+
 			config.rust_analyzer.setup({
 				capabilities = capabilities,
 			})
+
 			config.tsserver.setup({
 				capabilities = capabilities,
 			})
+
 			config.html.setup({
 				capabilities = capabilities,
 				filetypes = { "html", "templ" },
 			})
+
 			config.htmx.setup({
 				capabilities = capabilities,
 				filetypes = { "html", "templ" },
 			})
+
 			config.tailwindcss.setup({
 				capabilities = capabilities,
 				filetypes = { "templ", "javascript", "typescript", "react" },
 				init_options = { userLanguages = { templ = "html" } },
 			})
+
 			config.cmake.setup({
 				capabilities = capabilities,
 			})
