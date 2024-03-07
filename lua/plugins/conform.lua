@@ -8,6 +8,8 @@ return {
 					lua = { "stylua" },
 					-- Conform will run multiple formatters sequentially
 					go = { "goimports", "gofmt" },
+					xslt = { "xmllint" },
+					xml = { "xmllint" },
 					-- Use a sub-list to run only the first available formatter
 					javascript = { { "prettierd", "prettier" } },
 					-- You can use a function here to determine the formatters dynamically
