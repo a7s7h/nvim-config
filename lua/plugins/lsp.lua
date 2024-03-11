@@ -22,6 +22,7 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
+		event = "VeryLazy",
 		config = function()
 			require("neodev").setup()
 

@@ -1,5 +1,6 @@
 return {
 	"ThePrimeagen/harpoon",
+	event = "VeryLazy",
 	opts = {},
 	branch = "harpoon2",
 	dependencies = {
