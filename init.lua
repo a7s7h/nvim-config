@@ -1,3 +1,8 @@
+--    ___ ______________ __
+--   / _ /_  / __/_  / // /
+--  / __ |/ /\ \  / / _  /
+-- /_/ |_/_/___/ /_/_//_/
+--
 -- default settings
 require("options")
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -29,7 +34,7 @@ require("lazy").setup({
 				"gzip",
 				"matchit",
 				"matchparen",
-				"netrwPlugin",
+				-- "netrwPlugin",
 				"tarPlugin",
 				"tohtml",
 				"tutor",
