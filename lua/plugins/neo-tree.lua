@@ -74,6 +74,6 @@ return {
 				["i"] = "show_file_details",
 			},
 		})
-		vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", { desc = "Neotree: show" })
+		vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal current<CR>", { desc = "Neotree: show" })
 	end,
 }
