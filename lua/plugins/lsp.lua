@@ -59,7 +59,7 @@ return {
 
 			config.tailwindcss.setup({
 				capabilities = capabilities,
-				filetypes = { "templ", "javascript", "typescript", "react" },
+				filetypes = { "templ", "javascript", "typescript", "react", "html" },
 				init_options = { userLanguages = { templ = "html" } },
 			})
 
