@@ -51,4 +51,4 @@ require("lazy").setup({
 -- colorscheme tokyonight-moon
 
 vim.o.background = "dark"
-vim.cmd.colorscheme("tokyonight-moon")
+vim.cmd.colorscheme("tokyonight-night")
