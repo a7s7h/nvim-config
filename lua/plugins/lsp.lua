@@ -17,6 +17,7 @@ return {
 				"rust_analyzer",
 				"html",
 				"htmx",
+        "zls",
 			},
 		},
 	},
@@ -46,6 +47,10 @@ return {
 			config.tsserver.setup({
 				capabilities = capabilities,
 			})
+
+      config.zls.setup({
+        capabilities = capabilities,
+      })
 
 			config.html.setup({
 				capabilities = capabilities,
