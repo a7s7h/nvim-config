@@ -11,7 +11,8 @@ return {
 					go = { "goimports", "gofmt" },
 					xslt = { "xmllint" },
 					xml = { "xmllint" },
-					html = { "prettier" },
+					html = { "prettierd" },
+          json = { "prettierd" },
 					-- Use a sub-list to run only the first available formatter
 					javascript = { { "prettierd", "prettier" } },
 					-- You can use a function here to determine the formatters dynamically
@@ -28,7 +29,7 @@ return {
 					-- have other formatters configured.
 					["_"] = { "trim_whitespace" },
 				},
-				format_on_save = false,
+				-- format_on_save = false,
 				timout_ms = 500,
 				lsp_fallback = true,
 			})

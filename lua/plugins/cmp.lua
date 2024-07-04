@@ -18,6 +18,16 @@ return {
 			"rafamadriz/friendly-snippets",
 		},
 	},
+  {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup({
+        aliases = {
+          ["xslt"] = "xml"
+        }
+      })
+    end,
+  },
 	{
 		"hrsh7th/nvim-cmp",
 		event = { "BufReadPost", "BufNewFile" },
@@ -27,7 +37,7 @@ return {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-cmdline",
 			"hrsh7th/cmp-path",
-			"windwp/nvim-ts-autotag",
+			-- "windwp/nvim-ts-autotag",
 			"onsails/lspkind.nvim",
 		},
 		config = function()

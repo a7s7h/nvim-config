@@ -46,9 +46,9 @@ return {
 				autopairs = {
 					enable = true,
 				},
-				autotag = {
-					enable = true,
-				},
+				-- autotag = {
+					-- enable = true,
+				-- },
 				incremental_selection = {
 					enable = true,
 				},
