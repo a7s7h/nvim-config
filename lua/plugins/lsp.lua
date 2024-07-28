@@ -10,7 +10,6 @@ return {
 				"templ",
 				"lua_ls",
 				"cmake",
-        "clangd",
 				"eslint",
 				"gopls",
 				"tsserver",
@@ -40,6 +39,10 @@ return {
 			config.gopls.setup({
 				capabilities = capabilities,
 			})
+
+      config.clangd.setup({
+        capabilities = capabilities,
+      })
 
 			config.rust_analyzer.setup({
 				capabilities = capabilities,
