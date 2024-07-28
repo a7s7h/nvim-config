@@ -10,6 +10,7 @@ return {
 				"templ",
 				"lua_ls",
 				"cmake",
+        "clangd",
 				"eslint",
 				"gopls",
 				"tsserver",

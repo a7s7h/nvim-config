@@ -14,7 +14,7 @@ return {
 					html = { "prettierd" },
           json = { "prettierd" },
 					-- Use a sub-list to run only the first available formatter
-					javascript = { { "prettierd", "prettier" } },
+					javascript = { "prettierd", "prettier" },
 					-- You can use a function here to determine the formatters dynamically
 					python = function(bufnr)
 						if require("conform").get_formatter_info("ruff_format", bufnr).available then
