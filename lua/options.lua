@@ -55,6 +55,8 @@ vim.fn.sign_define("DapBreakpoint", { text = "🐞" })
 vim.filetype.add({
 	extension = {
 		templ = "templ",
+    fs = "glsl",
+    vs = "glsl",
 	},
 })
 -- animate yank highlight

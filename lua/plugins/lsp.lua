@@ -10,6 +10,7 @@ return {
 				"templ",
 				"lua_ls",
 				"cmake",
+        "glsl_analyzer",
 				"eslint",
 				"gopls",
 				"tsserver",
@@ -42,6 +43,11 @@ return {
 
       config.clangd.setup({
         capabilities = capabilities,
+      })
+
+      config.glsl_analyzer.setup({
+        capabilities = capabilities,
+				filetypes = { "fs", "vs", "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
       })
 
 			config.rust_analyzer.setup({
