@@ -57,6 +57,8 @@ vim.filetype.add({
 		templ = "templ",
     fs = "glsl",
     vs = "glsl",
+    vert = "glsl",
+    frag = "glsl",
 	},
 })
 -- animate yank highlight
@@ -87,7 +89,10 @@ vim.keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
 vim.keymap.set("n", "<C-o>", ":Telescope<cr>", { desc = "Telescope: open" })
 vim.keymap.set("n", "<leader>bx", ":BufferLineCloseOthers<cr>", { desc = "BufferLine: close others" })
 vim.keymap.set("n", "<A-q>", ":BufferLinePickClose<cr>", { desc = "BufferLine: pick and close" })
-vim.keymap.set("n", "<leader>bp", ":BufferLinePick<cr>", { desc = "BufferLine: pick" })
+vim.keymap.set("n", "<leader>bn", ":BufferLineCycleNext<cr>", { desc = "BufferLine: next" })
+vim.keymap.set("n", "<leader>bp", ":BufferLineCyclePrev<cr>", { desc = "BufferLine: prev" })
+vim.keymap.set("n", "<leader>bc", ":BufferLinePick<cr>", { desc = "BufferLine: pick" })
+vim.keymap.set("n", "<leader>bq", ":bdel<cr>", { desc = "BufferLine: close" })
 vim.keymap.set("n", "<Esc>", ":noh<CR>", { desc = "Clear highlights" })
 vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file" })
 vim.keymap.set("n", "<C-c>", ":%y+<CR>", { desc = "Copy whole file" })
