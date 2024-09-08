@@ -13,7 +13,6 @@ return {
         "glsl_analyzer",
 				"eslint",
 				"gopls",
-				"tsserver",
 				"tailwindcss",
 				"rust_analyzer",
 				"html",
