@@ -32,6 +32,7 @@ vim.opt.smartcase = true
 -- decrease update time
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
+vim.opt.colorcolumn = "81"
 
 vim.opt.list = false
 vim.opt.listchars = {
@@ -104,3 +105,6 @@ vim.keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi", { desc = "Move line down" })
 vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi", { desc = "Move line up" })
 vim.keymap.set("x", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
 vim.keymap.set("x", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
+
+vim.o.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
+

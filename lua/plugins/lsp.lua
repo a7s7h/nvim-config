@@ -9,8 +9,10 @@ return {
 			ensure_installed = {
 				"templ",
 				"lua_ls",
+        "ts_ls",
 				"cmake",
         "glsl_analyzer",
+        "wgsl_analyzer",
 				"eslint",
 				"gopls",
 				"tailwindcss",
@@ -49,11 +51,16 @@ return {
 				filetypes = { "fs", "vs", "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
       })
 
+      config.wgsl_analyzer.setup({
+        capabilities = capabilities,
+        filetypes = { "wgsl" },
+      })
+
 			config.rust_analyzer.setup({
 				capabilities = capabilities,
 			})
 
-			config.tsserver.setup({
+			config.ts_ls.setup({
 				capabilities = capabilities,
 			})
 
