@@ -11,8 +11,8 @@ return {
 				"lua_ls",
         "ts_ls",
 				"cmake",
-        "glsl_analyzer",
-        "wgsl_analyzer",
+        -- "glsl_analyzer",
+        -- "wgsl_analyzer",
 				"eslint",
 				"gopls",
 				"tailwindcss",
@@ -48,15 +48,15 @@ return {
         capabilities = capabilities,
       })
 
-      config.glsl_analyzer.setup({
-        capabilities = capabilities,
-				filetypes = { "fs", "vs", "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
-      })
-
-      config.wgsl_analyzer.setup({
-        capabilities = capabilities,
-        filetypes = { "wgsl" },
-      })
+    --   config.glsl_analyzer.setup({
+    --     capabilities = capabilities,
+				-- filetypes = { "fs", "vs", "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
+    --   })
+				--
+    --   config.wgsl_analyzer.setup({
+    --     capabilities = capabilities,
+    --     filetypes = { "wgsl" },
+    --   })
 
 			config.rust_analyzer.setup({
 				capabilities = capabilities,

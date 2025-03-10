@@ -9,16 +9,16 @@ return {
 			preset = {
 				header = {
 [[                                                
- @@@@@@   @@@@@@@@   @@@@@@   @@@@@@@@  @@@  @@@  
-@@@@@@@@  @@@@@@@@  @@@@@@@   @@@@@@@@  @@@  @@@  
-@@!  @@@       @@!  !@@            @@!  @@!  @@@  
-!@!  @!@      !@!   !@!           !@!   !@!  @!@  
-@!@!@!@!     @!!    !!@@!!       @!!    @!@!@!@!  
-!!!@!!!!    !!!      !!@!!!     !!!     !!!@!!!!  
-!!:  !!!   !!:           !:!   !!:      !!:  !!!  
-:!:  !:!  :!:           !:!   :!:       :!:  !:!  
-::   :::   ::       :::: ::    ::       ::   :::  
- :   : :  : :       :: : :    : :        :   : :  ]]
+     @@@@@@   @@@@@@@@   @@@@@@   @@@@@@@@  @@@  @@@  
+    @@@@@@@@  @@@@@@@@  @@@@@@@   @@@@@@@@  @@@  @@@  
+    @@!  @@@       @@!  !@@            @@!  @@!  @@@  
+    !@!  @!@      !@!   !@!           !@!   !@!  @!@  
+    @!@!@!@!     @!!    !!@@!!       @!!    @!@!@!@!  
+    !!!@!!!!    !!!      !!@!!!     !!!     !!!@!!!!  
+    !!:  !!!   !!:           !:!   !!:      !!:  !!!  
+    :!:  !:!  :!:           !:!   :!:       :!:  !:!  
+    ::   :::   ::       :::: ::    ::       ::   :::  
+     :   : :  : :       :: : :    : :        :   : :  ]]
 				},
 			},
 			sections = {
@@ -27,19 +27,19 @@ return {
 					{ section = "header" },
 					-- { section = "keys", gap = 1, padding = 1 },
 					{ icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
-				},
-				{
-					pane = 2,
 					{ icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
-					{
-						section = "terminal",
-						cmd = "chafa ~/.config/avatar.jpg --format symbols --symbols all --size 50x17 --scale 1.0; sleep .1",
-						height = 17,
-						width = 60,
-						indent = 5,
-						align = "center",
-					},
 				},
+				-- {
+				-- 	pane = 2,
+				-- 	{
+				-- 		section = "terminal",
+				-- 		cmd = "chafa ~/.config/avatar.jpg --format symbols --symbols all --size 50x17 --scale 1.0; sleep .1",
+				-- 		height = 17,
+				-- 		width = 60,
+				-- 		indent = 5,
+				-- 		align = "center",
+				-- 	},
+				-- },
 			},
 		},
 		explorer = { enabled = true },
