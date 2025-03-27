@@ -54,6 +54,15 @@ return {
 				args = {},
 			},
 			{
+				name = "Launch (test)",
+				type = "codelldb",
+				request = "launch",
+				program = "${workspaceFolder}/zig-out/bin/${workspaceFolderBasename}-test",
+				cwd = "${workspaceFolder}",
+				stopOnEntry = false,
+				args = {},
+			},
+			{
 				name = "Attach",
 				type = "codelldb",
 				request = "attach",
