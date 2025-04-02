@@ -4,10 +4,8 @@ return {
 	opts = {},
 	dependencies = {
 		"MunifTanjim/nui.nvim",
-		-- "rcarriga/nvim-notify",
 	},
 	config = function()
-		-- require("notify").setup()
 		require("noice").setup({
 			cmdline = {
 				format = {
@@ -20,16 +18,9 @@ return {
 					filter = {
 						event = "msg_show",
 						kind = "",
-						-- find = "written",
 					},
 					opts = { skip = true },
 				},
-				-- {
-				-- 	view = "notify",
-				-- 	filter = {
-				-- 		event = "msg_showmode",
-				-- 	},
-				-- },
 			},
 			lsp = {
 				override = {

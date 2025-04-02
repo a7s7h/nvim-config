@@ -36,50 +36,50 @@ vim.opt.timeoutlen = 300
 
 vim.opt.list = false
 vim.opt.listchars = {
-	tab = "▸ ",
-	extends = "❯",
-	precedes = "❮",
-	trail = "•",
-	eol = "↲",
-	space = "·",
+  tab = "▸ ",
+  extends = "❯",
+  precedes = "❮",
+  trail = "•",
+  eol = "↲",
+  space = "·",
 }
 
 vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.undofile = true
 -- disable built-in providers
 for _, provider in ipairs({ "node", "perl", "python3", "ruby" }) do
-	vim.g["loaded_" .. provider .. "_provider"] = 0
+  vim.g["loaded_" .. provider .. "_provider"] = 0
 end
 -- redefine symbols
 vim.fn.sign_define("DapBreakpoint", { text = "🐞" })
 -- register templ filetype
 vim.filetype.add({
-	extension = {
-		templ = "templ",
+  extension = {
+    templ = "templ",
     fs = "glsl",
     vs = "glsl",
     vert = "glsl",
     frag = "glsl",
-	},
+  },
 })
 -- animate yank highlight
 vim.api.nvim_create_augroup("ash_custom", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
-	group = "ash_custom",
-	pattern = "*",
-	callback = function()
-		vim.highlight.on_yank({ timeout = 200 })
-	end,
+  group = "ash_custom",
+  pattern = "*",
+  callback = function()
+    vim.highlight.on_yank({ timeout = 200 })
+  end,
 })
 
 vim.opt.scrolloff = 10
 
 local function toggle_list()
-	if vim.opt.list:get() then
-		vim.opt.list = false
-	else
-		vim.opt.list = true
-	end
+  if vim.opt.list:get() then
+    vim.opt.list = false
+  else
+    vim.opt.list = true
+  end
 end
 
 -- various keymaps
@@ -87,17 +87,11 @@ vim.keymap.set("n", "<leader>tl", toggle_list, { desc = "[t]oggle [l]ist chars" 
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down centered" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up centered" })
 vim.keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
-vim.keymap.set("n", "<C-o>", ":Telescope<cr>", { desc = "Telescope: open" })
-vim.keymap.set("n", "<leader>bx", ":BufferLineCloseOthers<cr>", { desc = "BufferLine: close others" })
-vim.keymap.set("n", "<A-q>", ":BufferLinePickClose<cr>", { desc = "BufferLine: pick and close" })
-vim.keymap.set("n", "<leader>bn", ":BufferLineCycleNext<cr>", { desc = "BufferLine: next" })
-vim.keymap.set("n", "<leader>bp", ":BufferLineCyclePrev<cr>", { desc = "BufferLine: prev" })
-vim.keymap.set("n", "<leader>bc", ":BufferLinePick<cr>", { desc = "BufferLine: pick" })
-vim.keymap.set("n", "<leader>bq", ":bdel<cr>", { desc = "BufferLine: close" })
 vim.keymap.set("n", "<Esc>", ":noh<CR>", { desc = "Clear highlights" })
 vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file" })
 vim.keymap.set("n", "<C-c>", ":%y+<CR>", { desc = "Copy whole file" })
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
+vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "[C]ode [f]ormatting" })
 vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature" })
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
@@ -106,5 +100,5 @@ vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi", { desc = "Move line up" })
 vim.keymap.set("x", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
 vim.keymap.set("x", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 
-vim.o.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
-
+vim.o.guicursor =
+"n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
