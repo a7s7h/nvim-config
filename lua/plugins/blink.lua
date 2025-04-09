@@ -6,6 +6,7 @@ return {
 			fuzzy = {
 				implementation = "rust",
 			},
+			signature = { enabled = true },
 			cmdline = {
 				enabled = true,
 				completion = {
@@ -16,7 +17,7 @@ return {
 			},
 			sources = {
 				-- add lazydev to your completion providers
-				default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+				default = { "lazydev", "lsp", "path", "snippets", "buffer", "git" },
 				providers = {
 					lazydev = {
 						name = "LazyDev",

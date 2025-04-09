@@ -1,6 +1,5 @@
 return {
   "stevearc/conform.nvim",
-  event = { "BufReadPre", "BufNewFile" },
   config = function()
     local conform = require("conform")
     conform.setup({
@@ -14,6 +13,8 @@ return {
         json = { "prettier" },
         yaml = { "prettier" },
         markdown = { "prettier" },
+        xml = { "xmllint" },
+        xslt = { "xmllint" },
         lua = { "stylua" },
       },
       format_on_save = {

@@ -32,7 +32,7 @@ vim.opt.smartcase = true
 -- decrease update time
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
--- vim.opt.colorcolumn = "81"
+vim.opt.colorcolumn = "100"
 
 vim.opt.list = false
 vim.opt.listchars = {
