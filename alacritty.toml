@@ -1,0 +1,45 @@
+[colors.primary]
+background = "#0c0e13"
+foreground = "#c5c8c6"
+
+[font]
+size = 22
+
+[font.bold]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Regular"
+
+[selection]
+save_to_clipboard = true
+
+[window]
+decorations = "full"
+opacity = 0.80
+# blur = true
+title = ""
+option_as_alt = "OnlyLeft"
+
+[window.dimensions]
+columns = 140
+lines = 38
+
+[window.padding]
+x = 0
+y = 0
+
+[window.position]
+x = 780
+y = 270
+
