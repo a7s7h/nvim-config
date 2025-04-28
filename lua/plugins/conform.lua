@@ -15,7 +15,7 @@ return {
         markdown = { "prettier" },
         xml = { "xmllint" },
         xslt = { "xmllint" },
-        lua = { "stylua" },
+        -- lua = { "stylua" },
       },
       format_on_save = {
         lsp_fallback = true,
